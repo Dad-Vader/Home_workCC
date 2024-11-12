@@ -93,16 +93,16 @@ class CaesarsCipher:
         with open(f'{path}\\outputfile.txt', 'a', encoding='utf-8') as file:
             file.write(f'{output}\n')
 
-
-cipher = CaesarsCipher()
-message = "o3zR v..D0?yRA0R8FR8v47w0ER4.R1WdC!sLF5D"
-path = input('Введите путь к файлу: ')
-cipher.write_in_file(path, cipher.find_key(message))
-key = 3
-original_message = "The vacation was a success"
-encrypted = cipher.encrypt(original_message, key)
-cipher.write_in_file(path, encrypted)
-decrypted = cipher.decrypt(encrypted, key)
-cipher.write_in_file(path, decrypted)
-print(f'Результат работы программы можно увидеть в файле: '
-      f'{path}\\outputfile.txt')
+if __name__ == '__main__':
+    cipher = CaesarsCipher()
+    message = "o3zR v..D0?yRA0R8FR8v47w0ER4.R1WdC!sLF5D"
+    path = input('Введите путь к файлу: ')
+    cipher.write_in_file(path, cipher.find_key(message))
+    key = 3
+    original_message = "The vacation was a success"
+    encrypted = cipher.encrypt(original_message, key)
+    cipher.write_in_file(path, encrypted)
+    decrypted = cipher.decrypt(encrypted, key)
+    cipher.write_in_file(path, decrypted)
+    print(f'Результат работы программы можно увидеть в файле: '
+          f'{path}\\outputfile.txt')
